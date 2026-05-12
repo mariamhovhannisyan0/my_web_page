@@ -288,9 +288,10 @@ blockquote {
 table {
     width: 100%;
     border-collapse: collapse;
-    background: #f7f1e8;
+    background: white;
     overflow: hidden;
     border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25), 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 th, td {
@@ -300,7 +301,7 @@ th, td {
 }
 
 th {
-    background:#f7f1e8;
+    background:#6d4c41;
     color: white;
 }
 
