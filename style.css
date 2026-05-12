@@ -110,20 +110,7 @@ header {
         margin-bottom: 30px;
     }
 
-.btn {
-    text-decoration: none;
-    background: #c49b63;
-    color: white;
-    padding: 15px 30px;
-    border-radius: 40px;
-    transition: 0.4s;
-    display: inline-block;
-}
 
-    .btn:hover {
-        background: #8d6e63;
-        transform: scale(1.1);
-    }
 
 /* SECTION */
 
