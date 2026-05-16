@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="hy">
 <head>
     <meta charset="UTF-8">
@@ -8,14 +8,37 @@
 </head>
 <body>
 
-    Sidebar
+    <!-- CART SIDEBAR -->
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+    <div class="cart-panel" id="cartPanel">
+        <div class="cart-header">
+            <h3>🛒 Զամբյուղ</h3>
+            <button class="cart-close" onclick="toggleCart()">✕</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p class="cart-empty">Զամբյուղը դատարկ է</p>
+        </div>
+        <div class="cart-footer" id="cartFooter" style="display:none">
+            <div class="cart-total">
+                Ընդամենը՝ <span id="cartTotal">0</span> ֏
+            </div>
+            <button class="btn-checkout" onclick="checkout()">Պատվիրել</button>
+        </div>
+    </div>
+
+    <!-- CART FLOATING BUTTON -->
+    <button class="cart-fab" onclick="toggleCart()" id="cartFab">
+        🛒 <span class="cart-badge" id="cartBadge">0</span>
+    </button>
+
+    <!-- Sidebar -->
     <aside class="sidebar">
         <h2>📚 Գրքի Ակումբ</h2>
-
         <nav>
             <a href="#home">Գլխավոր</a>
             <a href="#reviews">Գրախոսություններ</a>
             <a href="#books">Գրքեր</a>
+            <a href="#shop">Խանութ</a>
             <a href="#authors">Հեղինակներ</a>
             <a href="#contact">Կապ</a>
         </nav>
@@ -27,104 +50,56 @@
         <!-- Header -->
         <header id="home">
             <div class="overlay"></div>
-
             <div class="header-text">
                 <h1>Բարի գալուստ Գրքի Ակումբ</h1>
-                <p>
-                    Կարդա, քննարկիր և բացահայտիր նոր աշխարհներ
-                </p>
-
+                <p>Կարդա, քննարկիր և բացահայտիր նոր աշխարհներ</p>
             </div>
         </header>
 
-
-
         <div class="quote-slider">
-
-            <div class="quote">
-                «Գիրքը մարդու լավագույն ընկերն է»
-            </div>
-
-            <div class="quote">
-                «Ընթերցանությունը զարգացնում է միտքը»
-            </div>
-
-            <div class="quote">
-                «Յուրաքանչյուր գիրք նոր աշխարհ է»
-            </div>
-
+            <div class="quote">«Գիրքը մարդու լավագույն ընկերն է»</div>
+            <div class="quote">«Ընթերցանությունը զարգացնում է միտքը»</div>
+            <div class="quote">«Յուրաքանչյուր գիրք նոր աշխարհ է»</div>
         </div>
-
 
         <!-- About Section -->
         <section class="about">
             <h2 class="section-title">Մեր մասին</h2>
-
             <p>
                 «Գրքի Ակումբ»-ը հայկական հարթակ է, որտեղ ընթերցասերները
                 կարող են կիսվել իրենց սիրելի գրքերով, գրախոսություններով
                 և ընթերցանության փորձով։
             </p>
-
             <div class="quote-box">
                 <h3>Օրվա մեջբերում</h3>
-
-                <blockquote>
-                    «Մեծագույն գանձը` լավ գրադարանն է»
-                </blockquote>
+                <blockquote>«Մեծագույն գանձը` լավ գրադարանն է»</blockquote>
             </div>
         </section>
-
 
         <!-- Reviews -->
         <section id="reviews">
             <h2 class="section-title">Գրախոսություններ</h2>
-
             <div class="review-container">
 
                 <div class="card">
                     <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=1000" alt="Փոքրիկ Իշխանը">
-
                     <h3>Փոքրիկ Իշխանը</h3>
-
-                    <p>
-                        Հուզիչ և իմաստալից ստեղծագործություն,
-                        որը սովորեցնում է տեսնել սրտով։
-                    </p>
-
-                    <a href="https://grapaharan.org/%D5%93%D5%B8%D6%84%D6%80%D5%AB%D5%AF_%D4%BB%D5%B7%D5%AD%D5%A1%D5%B6%D5%A8#I" target="_blank">
-                        Կարդալ ավելին
-                    </a>
+                    <p>Հուզիչ և իմաստալից ստեղծագործություն, որը սովորեցնում է տեսնել սրտով։</p>
+                    <a href="https://grapaharan.org/%D5%93%D5%B8%D6%84%D6%80%D5%AB%D5%AF_%D4%BB%D5%B7%D5%AD%D5%A1%D5%B6%D5%A8#I" target="_blank">Կարդալ ավելին</a>
                 </div>
 
                 <div class="card">
                     <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=1000" alt="Ալքիմիկոսը">
-
                     <h3>Ալքիմիկոսը</h3>
-
-                    <p>
-                        Երազանքների և նպատակների մասին
-                        ոգեշնչող պատմություն։
-                    </p>
-
-                    <a href="https://grapaharan.org/%D4%B1%D5%AC%D6%84%D5%AB%D5%B4%D5%AB%D5%AF%D5%B8%D5%BD%D5%A8" target="_blank">
-                        Կարդալ ավելին
-                    </a>
+                    <p>Երազանքների և նպատակների մասին ոգեշնչող պատմություն։</p>
+                    <a href="https://grapaharan.org/%D4%B1%D5%AC%D6%84%D5%AB%D5%B4%D5%AB%D5%AF%D5%B8%D5%BD%D5%A8" target="_blank">Կարդալ ավելին</a>
                 </div>
 
                 <div class="card">
-                    <img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?q=80&w=1000" alt="1984">
-
+                    <img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?q=80&w=1000" alt="Ծռմռված տունը">
                     <h3>Ծռմռված տունը</h3>
-
-                    <p>
-                        Դիստոպիական աշխարհ, որը ստիպում է
-                        մտածել ազատության մասին։
-                    </p>
-
-                    <a href="https://online.anyflip.com/ujtvr/sxka/mobile/index.html" target="_blank">
-                        Կարդալ ավելին
-                    </a>
+                    <p>Դիստոպիական աշխարհ, որը ստիպում է մտածել ազատության մասին։</p>
+                    <a href="https://online.anyflip.com/ujtvr/sxka/mobile/index.html" target="_blank">Կարդալ ավելին</a>
                 </div>
 
             </div>
@@ -133,26 +108,22 @@
         <!-- Table -->
         <section id="books">
             <h2 class="section-title">Ամենաշատ կարդացված գրքերը</h2>
-
             <table>
                 <tr>
                     <th>Գիրք</th>
                     <th>Հեղինակ</th>
                     <th>Տարի</th>
                 </tr>
-
                 <tr>
                     <td>Հարրի Փոթեր</td>
                     <td>Ջոան Ռոուլինգ</td>
                     <td>1997</td>
                 </tr>
-
                 <tr>
                     <td>Մատանիների տիրակալը</td>
                     <td>Ջ.Ռ.Ռ.Տոլկին</td>
                     <td>1955</td>
                 </tr>
-
                 <tr>
                     <td>Աննա Ֆրանկի օրագիրը</td>
                     <td>Աննա Ֆրանկ</td>
@@ -161,60 +132,134 @@
             </table>
         </section>
 
+        <!-- ============ SHOP SECTION ============ -->
+        <section id="shop">
+            <h2 class="section-title">Գրախանութ</h2>
+
+            <div class="shop-filters">
+                <button class="filter-btn active" onclick="filterBooks('all', this)">Բոլորը</button>
+                <button class="filter-btn" onclick="filterBooks('վեպ', this)">Վեպ</button>
+                <button class="filter-btn" onclick="filterBooks('ֆանտաստիկա', this)">Ֆանտաստիկա</button>
+                <button class="filter-btn" onclick="filterBooks('դասական', this)">Դասական</button>
+            </div>
+
+            <div class="shop-grid" id="shopGrid">
+
+                <div class="shop-card" data-genre="ֆանտաստիկա">
+                    <img src="https://images.unsplash.com/photo-1618666012174-83b441c0bc76?q=80&w=600" alt="Հարրի Փոթեր">
+                    <div class="shop-card-body">
+                        <span class="shop-genre">Ֆանտաստիկա</span>
+                        <h3>Հարրի Փոթեր</h3>
+                        <p class="shop-author">Ջ. Ք. Ռոուլինգ</p>
+                        <div class="shop-card-footer">
+                            <span class="shop-price">3 500 ֏</span>
+                            <button class="btn-add-cart" onclick="addToCart('Հարրի Փոթեր', 3500, this)">+ Ավելացնել</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="shop-card" data-genre="ֆանտաստիկա">
+                    <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=600" alt="Մատանիների Տիրակալը">
+                    <div class="shop-card-body">
+                        <span class="shop-genre">Ֆանտաստիկա</span>
+                        <h3>Մատանիների Տիրակալը</h3>
+                        <p class="shop-author">Ջ. Ռ. Ռ. Տոլկին</p>
+                        <div class="shop-card-footer">
+                            <span class="shop-price">4 200 ֏</span>
+                            <button class="btn-add-cart" onclick="addToCart('Մատանիների Տիրակալը', 4200, this)">+ Ավելացնել</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="shop-card" data-genre="վեպ">
+                    <img src="https://images.unsplash.com/photo-1629992101753-56d196c8aabb?q=80&w=600" alt="Փոքրիկ Իշխանը">
+                    <div class="shop-card-body">
+                        <span class="shop-genre">Վեպ</span>
+                        <h3>Փոքրիկ Իշխանը</h3>
+                        <p class="shop-author">Անտուան դը Սենտ-Էքզյուպերի</p>
+                        <div class="shop-card-footer">
+                            <span class="shop-price">2 800 ֏</span>
+                            <button class="btn-add-cart" onclick="addToCart('Փոքրիկ Իշխանը', 2800, this)">+ Ավելացնել</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="shop-card" data-genre="վեպ">
+                    <img src="https://images.unsplash.com/photo-1610116306796-6fea9f4fae38?q=80&w=600" alt="Ալքիմիկոսը">
+                    <div class="shop-card-body">
+                        <span class="shop-genre">Վեպ</span>
+                        <h3>Ալքիմիկոսը</h3>
+                        <p class="shop-author">Պաուլո Կոելյո</p>
+                        <div class="shop-card-footer">
+                            <span class="shop-price">3 100 ֏</span>
+                            <button class="btn-add-cart" onclick="addToCart('Ալքիմիկոսը', 3100, this)">+ Ավելացնել</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="shop-card" data-genre="դասական">
+                    <img src="https://images.unsplash.com/photo-1541963463532-d68292c34b19?q=80&w=600" alt="Հանցանք և Պատիժ">
+                    <div class="shop-card-body">
+                        <span class="shop-genre">Դասական</span>
+                        <h3>Հանցանք և Պատիժ</h3>
+                        <p class="shop-author">Ֆ. Դոստոևսկի</p>
+                        <div class="shop-card-footer">
+                            <span class="shop-price">3 900 ֏</span>
+                            <button class="btn-add-cart" onclick="addToCart('Հանցանք և Պատիժ', 3900, this)">+ Ավելացնել</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="shop-card" data-genre="դասական">
+                    <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=600" alt="Անի">
+                    <div class="shop-card-body">
+                        <span class="shop-genre">Դասական</span>
+                        <h3>Հայ ժողովրդական հեքիաթներ</h3>
+                        <p class="shop-author">Հ. Թումանյան</p>
+                        <div class="shop-card-footer">
+                            <span class="shop-price">2 500 ֏</span>
+                            <button class="btn-add-cart" onclick="addToCart('Հայ ժողովրդական հեքիաթներ', 2500, this)">+ Ավելացնել</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- ============ END SHOP ============ -->
+
         <!-- Authors -->
         <section id="authors">
             <h2 class="section-title">Հայտնի հեղինակներ</h2>
-
             <div class="authors">
-
                 <div class="author-box">
                     <h3>Վիլյամ Շեքսպիր</h3>
-                    <p>
-                        Անգլիացի մեծ դրամատուրգ և բանաստեղծ։
-                    </p>
+                    <p>Անգլիացի մեծ դրամատուրգ և բանաստեղծ։</p>
                 </div>
-
-                 <div class="author-box">
+                <div class="author-box">
                     <h3>Ագաթա Քրիստի</h3>
-                    <p>
-                        Անգլիացի գրող և դրամատուրգ։
-                    </p>
+                    <p>Անգլիացի գրող և դրամատուրգ։</p>
                 </div>
-                
-                  <div class="author-box">
+                <div class="author-box">
                     <h3>Մայքլ Օմեր</h3>
-                    <p>
-                        Քրեական, թրիլեր, սարսափ և ֆանտաստիկա ժանրերի իսրայելցի գրող։ 
-                    </p>
+                    <p>Քրեական, թրիլեր, սարսափ և ֆանտաստիկա ժանրերի իսրայելցի գրող։</p>
                 </div>
-                
                 <div class="author-box">
                     <h3>Հովհաննես Թումանյան</h3>
-                    <p>
-                        Հայ մեծ գրող և ազգային բանաստեղծ։
-                    </p>
+                    <p>Հայ մեծ գրող և ազգային բանաստեղծ։</p>
                 </div>
-
                 <div class="author-box">
                     <h3>Ֆյոդոր Դոստոևսկի</h3>
-                    <p>
-                        Ռուս դասական գրականության կարևոր ներկայացուցիչ։
-                    </p>
+                    <p>Ռուս դասական գրականության կարևոր ներկայացուցիչ։</p>
                 </div>
-
             </div>
         </section>
 
         <!-- Contact Form -->
         <section id="contact">
             <h2 class="section-title">Միացիր ակումբին</h2>
-
             <form action="#" method="post">
-
                 <input type="text" placeholder="Անուն" required>
-
                 <input type="email" placeholder="Էլ․ հասցե" required>
-
                 <select required>
                     <option value="" disabled selected>Սիրելի ժանր</option>
                     <option>Վեպ</option>
@@ -222,20 +267,14 @@
                     <option>Դետեկտիվ</option>
                     <option>Փիլիսոփայություն</option>
                 </select>
-
                 <textarea placeholder="Քո կարծիքը"></textarea>
-
-                <button type="submit">
-                    Ուղարկել
-                </button>
-
+                <button type="submit">Ուղարկել</button>
             </form>
         </section>
 
-        <!-- Float Example -->
+        <!-- Float Section -->
         <section class="float-section">
             <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?q=80&w=1000" alt="Գրքեր">
-
             <p>
                 Գիրքը գիտելիքի, երևակայության և մշակույթի աղբյուր է։
                 Ընթերցանությունը զարգացնում է մտածողությունը,
@@ -247,8 +286,6 @@
 
         <!-- Footer -->
         <footer>
-
-            <!-- Բաժանորդագրություն -->
             <div class="footer-subscribe">
                 <h3>Բաժանորդագրվիր նորություններին</h3>
                 <p>Ստացիր գրքային առաջարկներ ուղիղ քո փոստին</p>
@@ -258,34 +295,25 @@
                 </form>
             </div>
 
-            <!-- Հիմնական footer բաժիններ -->
             <div class="footer-content">
-
-                <!-- Լոգո + նկարագրություն + սոցիալական -->
                 <div class="footer-brand">
                     <h2>📚 Գրքի Ակումբ</h2>
                     <p>Կարդա, քննարկիր և բացահայտիր նոր աշխարհներ։</p>
-                    
                 </div>
-
-                <!-- Նավիգացիա -->
                 <div class="footer-nav">
                     <h4>Բաժիններ</h4>
                     <a href="#home">Գլխավոր</a>
                     <a href="#reviews">Գրախոսություններ</a>
                     <a href="#books">Գրքեր</a>
+                    <a href="#shop">Խանութ</a>
                     <a href="#authors">Հեղինակներ</a>
                     <a href="#contact">Կապ</a>
                 </div>
-
-                <!-- Մեր մասին -->
                 <div class="footer-about">
                     <h4>Մեր մասին</h4>
                     <p>«Գրքի Ակումբ»-ը հայկական հարթակ է, որտեղ ընթերցասերները կիսվում են իրենց փորձով։</p>
                     <p>Հիմնադրվել է 2024 թ․</p>
                 </div>
-
-                <!-- Օգնություն -->
                 <div class="footer-help">
                     <h4>Օգնություն</h4>
                     <a href="#">Հաճախ տրվող հարցեր</a>
@@ -293,8 +321,6 @@
                     <a href="#">Կանոններ</a>
                     <a href="#">Գաղտնիության քաղաքականություն</a>
                 </div>
-
-                <!-- Կապի info -->
                 <div class="footer-contact">
                     <h4>Կապ</h4>
                     <p>📧 info@grkiakumb.am</p>
@@ -302,16 +328,116 @@
                     <p>📞 +374 93 456 789</p>
                     <p>📍 Վանաձոր, Հայաստան</p>
                 </div>
-
             </div>
 
             <div class="footer-bottom">
                 <p>© 2026 Գրքի Ակումբ | Բոլոր իրավունքները պաշտպանված են</p>
             </div>
-
         </footer>
 
     </div>
+
+    <!-- CHECKOUT MODAL -->
+    <div class="modal-overlay" id="checkoutModal" style="display:none">
+        <div class="modal-box">
+            <h2>✅ Պատվերը կատարված է</h2>
+            <p>Շնորհակալություն ձեր գնումի համար։ Մենք կկապվենք ձեզ հետ շուտով։</p>
+            <button onclick="closeModal()">Փակել</button>
+        </div>
+    </div>
+
+    <script>
+        // ========== CART STATE ==========
+        let cart = [];
+
+        function addToCart(name, price, btn) {
+            const existing = cart.find(i => i.name === name);
+            if (existing) {
+                existing.qty++;
+            } else {
+                cart.push({ name, price, qty: 1 });
+            }
+            updateCartUI();
+            btn.textContent = '✓ Ավելացված';
+            btn.style.background = '#5d8a3c';
+            setTimeout(() => {
+                btn.textContent = '+ Ավելացնել';
+                btn.style.background = '';
+            }, 1500);
+        }
+
+        function removeFromCart(name) {
+            cart = cart.filter(i => i.name !== name);
+            updateCartUI();
+        }
+
+        function changeQty(name, delta) {
+            const item = cart.find(i => i.name === name);
+            if (!item) return;
+            item.qty += delta;
+            if (item.qty <= 0) cart = cart.filter(i => i.name !== name);
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const count = cart.reduce((s, i) => s + i.qty, 0);
+            const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
+
+            document.getElementById('cartBadge').textContent = count;
+            document.getElementById('cartTotal').textContent = total.toLocaleString('hy-AM');
+
+            const itemsEl = document.getElementById('cartItems');
+            const footerEl = document.getElementById('cartFooter');
+
+            if (cart.length === 0) {
+                itemsEl.innerHTML = '<p class="cart-empty">Զամբյուղը դատարկ է</p>';
+                footerEl.style.display = 'none';
+            } else {
+                footerEl.style.display = 'block';
+                itemsEl.innerHTML = cart.map(item => `
+                    <div class="cart-item">
+                        <div class="cart-item-info">
+                            <span class="cart-item-name">${item.name}</span>
+                            <span class="cart-item-price">${(item.price * item.qty).toLocaleString('hy-AM')} ֏</span>
+                        </div>
+                        <div class="cart-item-controls">
+                            <button onclick="changeQty('${item.name}', -1)">−</button>
+                            <span>${item.qty}</span>
+                            <button onclick="changeQty('${item.name}', 1)">+</button>
+                            <button class="cart-remove" onclick="removeFromCart('${item.name}')">🗑</button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        }
+
+        function toggleCart() {
+            const panel = document.getElementById('cartPanel');
+            const overlay = document.getElementById('cartOverlay');
+            const open = panel.classList.toggle('open');
+            overlay.style.display = open ? 'block' : 'none';
+        }
+
+        function checkout() {
+            cart = [];
+            updateCartUI();
+            toggleCart();
+            document.getElementById('checkoutModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('checkoutModal').style.display = 'none';
+        }
+
+        // ========== FILTER ==========
+        function filterBooks(genre, btn) {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            document.querySelectorAll('.shop-card').forEach(card => {
+                card.style.display = (genre === 'all' || card.dataset.genre === genre) ? 'block' : 'none';
+            });
+        }
+    </script>
 
 </body>
 </html>
